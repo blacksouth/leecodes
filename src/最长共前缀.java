@@ -20,10 +20,12 @@ public class 最长共前缀 {
         String []aa={"flower","flow","flight"};
         System.out.println(longestCommonPrefix(aa));
     }
+
     public static String longestCommonPrefix(String[] strs) {
         if(strs ==null||strs.length==0){
             return null;
         }
+
         String pre=strs[0];
         for (String s :strs) {
             while(s.indexOf(pre)!=0){
