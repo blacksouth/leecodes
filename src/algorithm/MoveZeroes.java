@@ -16,27 +16,25 @@ public class MoveZeroes {
 
     public static void main(String[] args) {
         MoveZeroes moveZeroes = new MoveZeroes();
-        moveZeroes.moveZeroes(new int[]{0,0,1});
+        moveZeroes.moveZeroes(new int[]{0,1,0,3,12});
     }
-
-
-    /**
+   /**
      * 自己解法
      * @param nums
      */
     public void moveZeroes(int[] nums) {
-             int i = 0;
-            while(i < nums.length){
-                if(nums[i]==0){
-                 for (int j = i; j <nums.length-1 ; j++) {
-                        nums[j]=nums[j+1];
-                     }
-                    nums[nums.length-1]=0;
-                }else {
-                    i++;
+       for (int i = 0; i < nums.length; i++) {
+            if(nums[i]==0){
+                for (int j = i; j < nums.length; j++) {
+                    if(nums[j]!=0){
+                        nums[i]=nums[j];
+                        nums[j]=0;
+                        break;
+                    }
                 }
             }
-        System.out.println(Arrays.toString(nums));
+        }
+
 
     }
 
