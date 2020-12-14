@@ -20,7 +20,10 @@ import java.util.Arrays;
 
 public class 整数反转 {
     public static void main(String[] args) {
-        System.out.println(reverse(-123));
+
+
+
+        System.out.println(reverseAnwser(1234567898));
      }
 
 

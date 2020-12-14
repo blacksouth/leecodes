@@ -1,74 +1,17 @@
 package test;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-
 public class test01 {
-
     public static void main(String[] args) {
-        String [] names ={"tom","tim","allen","alice"};
-
-        Class<?> clazz = Test.class;
-
-
-        try
-
-        {
-
-            Method method = clazz.getMethod("sayHi", String.class);
-
-            for(String name:names)
-
-                method.invoke(clazz.newInstance(),name);
-
-        } catch (NoSuchMethodException e)
-
-        {
-
-            e.printStackTrace();
-
-        } catch (IllegalAccessException e)
-
-        {
-
-            e.printStackTrace();
-
-        } catch (IllegalArgumentException e)
-
-        {
-
-            e.printStackTrace();
-
-        } catch (InvocationTargetException e)
-
-        {
-
-            e.printStackTrace();
-
-        } catch (InstantiationException e)
-
-        {
-
-            e.printStackTrace();
-
-        }
-
-
-
+        int a=Integer.MAX_VALUE;
+        int b=Integer.MIN_VALUE-a;
+        System.out.println(b);
+//        System.out.println("最小值"+b);
+//        for (int i = 0; i < 10; i++) {
+//            if(a==b){
+//                System.out.println("回到最小值"+a);
+//            }
+//            System.out.println(a++);
+//
+//        }
     }
-}
-class Test
-
-{
-
-    public void sayHi(String name)
-
-    {
-
-        System.out.println("Hi "+name);
-
-    }
-
 }

@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.Arrays;
+
 /**
  * 给你一个数组 nums和一个值 val，你需要 原地 移除所有数值等于val的元素，并返回移除后数组的新长度。
  *
@@ -30,18 +32,53 @@ package algorithm;
 public class RemoveElement {
     public static void main(String[] args) {
         RemoveElement removeElement = new RemoveElement();
-        int i = removeElement.removeElement(new int[]{0, 1, 2, 2, 3, 0, 4, 2}, 2);
-        System.out.println(i);
+     //   int i = removeElement.removeElement(new int[]{0,1,2,2,3,0,4,2}, 2);
+        int i1 = removeElement.removeElementAnswer(new int[]{0,1,2,2,3,0,4,2,5}, 0);
+        System.out.println(i1);
 
     }
 
+    /**
+     * 自己解题
+     * @param nums
+     * @param val
+     * @return
+     */
     public int removeElement(int[] nums, int val) {
         int temp=0;
         for (int i = 0; i <nums.length ; i++) {
             if(nums[i]==val){
-                nums[temp++]=nums[i];
+                temp++;
+                for (int j = i; j <nums.length-1 ; j++) {
+                    nums[j]=nums[j+1];
+                }
+                i--;
             }
         }
-       return temp;
+
+        System.out.println(Arrays.toString(nums));
+       return nums.length-temp;
     }
+
+    /**
+     * 题解
+     * @param nums
+     * @param val
+     * @return
+     */
+    public int removeElementAnswer(int[] nums, int val) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            if (nums[i] == val) {
+                for (int j = i; j < len - 1; j++) {
+                    nums[j] = nums[j + 1];
+                }
+                len--;
+                i--;
+            }
+        }
+        System.out.println(Arrays.toString(nums));
+        return len;
+    }
+
 }
