@@ -36,10 +36,13 @@ public class Heater {
 
 
     public static void main(String[] args) {
-
+        int[] houses={1,2,3,4,5};
+        int[] heaters={4,2};
+        int radius = findRadius(houses, heaters);
+        System.out.println(radius);
     }
 
-    public int findRadius(int[] houses, int[] heaters) {
+    public static int findRadius(int[] houses, int[] heaters) {
         // 排序
         Arrays.sort(houses);
         Arrays.sort(heaters);
